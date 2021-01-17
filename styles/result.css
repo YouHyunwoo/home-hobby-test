@@ -209,6 +209,10 @@
         border-radius: 37.6px;
     }
 
+    #result .description p {
+        text-indent: 22.56px;
+    }
+
     #result .description p b {
         font-size: 52.64px;
     }
@@ -221,12 +225,4 @@
         width: 75.2px;
         height: 75.2px;
     }
-/* 
-    #result #retry {
-        width: 451px;
-        margin-top: 75.2px;
-        line-height: 75.2px;
-        border-width: 7.52px;
-        font-size: 37.6px;
-    } */
 }
