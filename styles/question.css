@@ -1,0 +1,118 @@
+#question {
+    padding: 0;
+    width: 33.33333%;
+    height: 100vh;
+    background: #000 url(../images/question/bg2.jpg) center no-repeat;
+    background:
+        linear-gradient(135deg, rgba(24, 47, 112, 0.5) 20%, 20%, rgba(11, 35, 100, 0.3) 30%, 50%, rgba(36, 3, 63, .5) 50%),
+        linear-gradient(225deg, transparent, 10%, black 70%);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#question .top_box {
+    padding: 30px;
+}
+
+#question h1 {
+    width: 100%;
+    margin: auto;
+    font-size: 18px;
+    font-family: 'JalnanOTF', sans-serif;
+    color: white;
+    line-height: 1.5;
+}
+
+#question .progress {
+    width: 100%;
+    margin: auto;
+    margin-top: 4vw;
+}
+
+#question .progress .border {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: #ffffff;
+    margin: 0 auto;
+    padding: 1px;
+}
+
+#question .progress .bar {
+    width: 10%;
+    height: 1.6vw;
+    background-color: #5f135f;
+}
+
+#question .progress .text {
+    margin-top: 10px;
+    font-size: 4vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+#question .choices {
+    width: 100%;
+    padding: 20px;
+    padding-top: 0;
+    overflow-y: auto;
+}
+
+#question .choice {
+    width: 90%;
+    height: auto;
+    margin: auto;
+    margin-top: 30px;
+    padding: 5px 20px;
+    display: block;
+    border: 3px solid white;
+    border-radius: 18px;
+    line-height: 24px;
+    font-size: 16px;
+    font-family: 'Jua', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#question .choice:hover {
+    background-color: rgba(255, 196, 0, 0.7);
+}
+
+#question .choice:first-child {
+    margin-top: 0px;
+}
+
+@media only screen and (min-width: 500px) {
+    #question .progress {
+        margin-top: 20px;
+    }
+
+    #question h1 {
+        max-width: 700px;
+    }
+
+    #question .progress .border {
+        width: 400px;
+    }
+
+    #question .progress .bar {
+        height: 8px;
+    }
+
+    #question .progress .text {
+        font-size: 20px;
+    }
+
+    #question h1 {
+        font-size: 30px;
+    }
+
+    #question .choice {
+        max-width: 600px;
+        font-size: 24px;
+    }
+}

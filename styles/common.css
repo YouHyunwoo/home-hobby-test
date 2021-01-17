@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'JalnanOTF';
+    src: url(../fonts/JalnanOTF.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100vh;
+    /* background-color: #f3d6d1; */
+    background-color: black;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+body > div.wrap {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+body > div.wrap > ul {
+    width: 300%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+}
+
+body > div.wrap > ul > li {
+    height: 100vh;
+    width: 33.333333%;
+    padding: 40px;
+    float: left;
+}
+
+.round-rect-button {
+    display: inline-block;
+    padding: 2vw 8vw;
+    background-color: transparent;
+    border: 3px solid #fff;
+    border-radius: 6vw;
+    font-size: 6vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}

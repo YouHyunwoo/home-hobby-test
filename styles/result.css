@@ -1,0 +1,232 @@
+#result {
+    padding: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background-color:rgba(32, 40, 93, 0.6);
+}
+
+#result .scroll {
+    width: 100%;
+    height: auto;
+    padding: 10vw;
+    background:#20285d url(../images/result/background.jpg) top no-repeat;
+    background-size: 100%;
+}
+
+#result h2 {
+    width: 100%;
+    font-size: 6vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: white;
+    text-align: center;
+}
+
+#result .title {
+    margin-top: 5vw;
+    font-size: 9vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+#result .picture {
+    width: 62.8vw;
+    height: 43vw;
+    margin: 0 auto;
+    margin-top: 16vw;
+    position: relative;
+    background-color: rgba(255, 99, 71,0.5);
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
+}
+
+#result .picture > img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+
+#result .description {
+    width: 100%;
+    margin-top: 29vw;
+    padding: 5vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5vw;
+}
+
+#result .description p {
+    margin-top: 1em;
+    font-size: 6vw;
+    font-family: 'Jua', sans-serif;
+    color: #ffffff;
+    letter-spacing: 0.02em;
+    text-indent: 3vw;
+}
+
+#result .description p:first-child {
+    margin-top: 0;
+}
+
+#result .description p b {
+    font-size: 7vw;
+    color: orange;
+}
+
+.result_image_copyright {
+    color: #ffffff;
+    font-size: 0.2vw;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+}
+
+.result_image_copyright a {
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+#result .share {
+    width: 60%;
+    margin: auto;
+    margin-top: 10vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+#result .share > li {
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+    border-radius: 20vw;
+    cursor: pointer;
+}
+
+#result .share li:nth-child(1) {
+    background: url(/images/result/sns/facebook.png) center/cover no-repeat;
+}
+
+#result .share li:nth-child(2) {
+    background: url(/images/result/sns/twitter.png) center/cover no-repeat;
+}
+
+#result .share li:nth-child(3) {
+    background: url(/images/result/sns/kakaostory.png) center/cover no-repeat;
+}
+
+#result .share li:nth-child(4) {
+    background: url(/images/result/sns/kakaotalk.png) center/cover no-repeat;
+}
+
+#result #linkCopy {
+    margin-top: 2vw;
+    display: block;
+    font-size: 2vw;
+    font-family: 'Jua', sans-serif;
+    color: white;
+    text-decoration: underline;
+    text-align: center;
+    cursor: pointer;
+}
+
+#result #retry {
+    width: 60vw;
+    margin: auto;
+    margin-top: 10vw;
+    line-height: 10vw;
+    display: block;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5vw;
+    font-size: 5vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: #ffffff;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+#result #retry:hover {
+    background-color: rgba(255, 196, 0, 0.7);
+}
+
+#result .image_copyright {
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    text-align: center;
+    margin-top: 50px;
+}
+
+#result .image_copyright a {
+    text-decoration: underline;
+    font-weight: 900;
+}
+
+.herron_marron {
+    text-align: center;
+    color: #ffffff;
+    font-size: 12px;
+}
+
+@media only screen and (min-width: 500px) {
+    #result .description p {
+        font-size: 30px;
+    }
+
+    #result #retry {
+        width: 300px;
+        margin-top: 50px;
+        line-height: 50px;
+        border-width: 3px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    #result .scroll {
+        max-width: 752px;
+        margin: auto;
+        padding: 75.2px;
+    }
+
+    #result h2 {
+        font-size: 45.12px;
+    }
+
+    #result .title {
+        margin-top: 37.6px;
+        font-size: 67.68px;
+    }
+
+    #result .picture {
+        width: 472.256px;
+        height: 323.36px;
+        margin-top: 120.32px;
+    }
+    
+    #result .description {
+        margin-top: 218.08px;
+        padding: 37.6px;
+        border-radius: 37.6px;
+    }
+
+    #result .description p b {
+        font-size: 52.64px;
+    }
+
+    #result .share {
+        margin-top: 75.2px;
+    }
+
+    #result .share li {
+        width: 75.2px;
+        height: 75.2px;
+    }
+/* 
+    #result #retry {
+        width: 451px;
+        margin-top: 75.2px;
+        line-height: 75.2px;
+        border-width: 7.52px;
+        font-size: 37.6px;
+    } */
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>심리테스트</title>
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/common.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/question.css">
+    <link rel="stylesheet" href="styles/result.css">
+
+    <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+    <script src="scripts/jquery-3.5.1.min.js"></script>
+    <script type="module" src="scripts/page/main.js"></script>
+    <script type="module" src="scripts/page/question.js"></script>
+    <script type="module" src="scripts/page/result.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <ul id="pages">
+            <li id="main">
+                <div class="scroll">
+                    <div class="title">
+                        <img src="images/main/title.png">
+                    </div>
+
+                    <p class="sub-title">나에게 딱 맞는 집콕 취미 테스트</p>
+
+                    <a id="start-button" class="test-start round-rect-button">시작하기</a>
+                    <h3 class="image_copyright">
+                        Designed by
+                        <a
+                            href="https://www.freepik.com/free-vector/girl-bedroom-interior-on-attic-at-night_7588808.htm">
+                            Freepik
+                        </a>
+                    </h3>
+                </div>
+            </li>
+
+            <li id="question">
+                <div class="top_box">
+                    <h1>
+                        포켓몬스터에서 제일 처음에 나오는 포켓몬은 무엇일까요?
+                    </h1>
+
+                    <div class="progress">
+                        <div class="border">
+                            <div class="bar"></div>
+                        </div>
+                        <h5 class="text">10%</h5>
+                    </div>
+                </div>
+
+                <div class="choices">
+                    <a class="choice">파이리</a>
+                    <a class="choice">피카츄</a>
+                    <a class="choice">구구</a>
+                </div>
+            </li>
+
+            <li id="result">
+                <div class="scroll">
+                    <h2>
+                        당신의 취미는
+                    </h2>
+
+                    <h1 class="title">홈 트레이닝</h1>
+
+                    <div class="picture">
+                        <h6 class="result_image_copyright">
+                            Imaged by
+                            <a href="https://www.freepik.com/free-vector/student-s-desk_723646.htm">
+                                Freepik
+                            </a>
+                        </h6>
+                        <img src="images/result/hobby/puzzle painting.jpg" alt="귀여운 이상해씨">
+                    </div>
+
+                    <div class="description">
+
+                    </div>
+
+                    <ul class="share">
+                        <li id="facebook"></li>
+                        <li id="twitter"></li>
+                        <li id="kakaostory"></li>
+                        <li id="kakaotalk"></li>
+                    </ul>
+
+                    <a id="linkCopy">링크복사</a>
+
+                    <button type="button" id="retry">다시하기</button>
+
+                    <h3 class="image_copyright">
+                        Designed by
+                        <a
+                            href="https://www.freepik.com/free-vector/girl-bedroom-interior-on-attic-at-night_7588808.htm">
+                            Freepik
+                        </a>
+                    </h3>
+                    <h4 class="herron_marron">Copyright(c) 2021 HERRONMARRON</h4>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>
