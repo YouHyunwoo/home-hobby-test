@@ -2,6 +2,10 @@ import { resetQuestionPage } from './question.js';
 
 
 
+const page = document.querySelector('#pages');
+
+const neon = document.querySelector('#main .title');
+
 const startButtons = Array.from(document.querySelectorAll('#main .test-start'));
 
 
@@ -16,15 +20,35 @@ function startTest() {
 }
 
 function moveToQuestionPage() {
-    $('#pages').animate({'left':'-100%'}, 300);
+    page.animate(
+        [ { left: '-100%' } ],
+        {
+            duration: 400,
+            direction: 'alternate',
+            fill: 'forwards',
+        }
+    );
 }
 
 function animateNeonSign() {
-    $('#main .title').css('visibility', 'visible')
-        .delay(3000).queue(function (next) { $(this).css('visibility', 'hidden'); next(); })
-        .delay(100).queue(function (next) { $(this).css('visibility', 'visible'); next(); })
-        .delay(100).queue(function (next) { $(this).css('visibility', 'hidden'); next(); })
-        .delay(100).queue(function (next) { $(this).css('visibility', 'visible'); next(); animateNeonSign(); });
+    delay(0)()
+    .then(setVisibility('visible'))
+    .then(delay(3000))
+    .then(setVisibility('hidden'))
+    .then(delay(100))
+    .then(setVisibility('visible'))
+    .then(delay(100))
+    .then(setVisibility('hidden'))
+    .then(delay(100))
+    .then(() => animateNeonSign());
+}
+
+function delay(ms) {
+    return value => new Promise((resolve) => setTimeout(resolve, ms, value));
+}
+
+function setVisibility(visibility) {
+    return () => { neon.style.visibility = visibility; };
 }
 
 animateNeonSign();

@@ -39,6 +39,20 @@
     box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
 }
 
+#result .picture .copyright {
+    color: #ffffff;
+    font-size: 3vw;
+    font-weight: 400;
+    position: absolute;
+    right: 0;
+    bottom: -15px;
+}
+
+#result .picture .copyright a {
+    text-decoration: underline;
+    font-weight: 900;
+}
+
 #result .picture > img {
     width: 100%;
     height: 100%;
@@ -69,20 +83,6 @@
 #result .description p b {
     font-size: 7vw;
     color: orange;
-}
-
-.result_image_copyright {
-    color: #ffffff;
-    font-size: 3vw;
-    font-weight: 400;
-    position: absolute;
-    right: 0;
-    bottom: -15px;
-}
-
-.result_image_copyright a {
-    text-decoration: underline;
-    font-weight: 900;
 }
 
 #result .share {
@@ -117,10 +117,10 @@
     background: url(/images/result/sns/kakaotalk.png) center/cover no-repeat;
 }
 
-#result #linkCopy {
+#result #link-copy {
     margin-top: 2vw;
     display: block;
-    font-size: 2vw;
+    font-size: 3vw;
     font-family: 'Jua', sans-serif;
     color: white;
     text-decoration: underline;
@@ -148,7 +148,7 @@
     background-color: rgba(255, 196, 0, 0.7);
 }
 
-#result .image_copyright {
+#result .image-copyright {
     color: #ffffff;
     font-size: 12px;
     font-weight: 400;
@@ -156,7 +156,7 @@
     margin-top: 50px;
 }
 
-#result .image_copyright a {
+#result .image-copyright a {
     text-decoration: underline;
     font-weight: 900;
 }
@@ -202,6 +202,11 @@
         height: 323.36px;
         margin-top: 120.32px;
     }
+
+    #result .picture .copyright {
+        color: #ffffff;
+        font-size: 22.56px;
+    }
     
     #result .description {
         margin-top: 218.08px;
@@ -224,5 +229,10 @@
     #result .share li {
         width: 75.2px;
         height: 75.2px;
+    }
+
+    #result #link-copy {
+        margin-top: 22.56px;
+        font-size: 22.56px;
     }
 }

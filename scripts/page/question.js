@@ -9,6 +9,8 @@ const progressBar = document.querySelector('#question .progress .bar');
 const progressText = document.querySelector('#question .progress .text');
 const choices = document.querySelector('#question .choices');
 
+const nodes = document.querySelectorAll('#question *');
+
 let isAnimating = false;
 
 
@@ -35,13 +37,35 @@ function isFinished() {
 function showCurrentQuestionWithAnimation() {
     startAnimation();
 
-    $('#question *')
-        .animate({'opacity': '0.0'}, 200, 'swing', changeQuestionAfterFadeOut)
-        .animate({'opacity': '1.0'}, 200, stopAnimation);
+    new Promise((resolve) => {
+        fadeOutAllNodes();
+
+        setTimeout(resolve, 200);
+    })
+    .then(() => {
+        changeQuestionAfterFadeOut();
+
+        fadeInAllNodes();
+
+        setTimeout(stopAnimation, 200);
+    });
 }
 
 function startAnimation() {
     isAnimating = true;
+}
+
+function fadeOutAllNodes() {
+    nodes.forEach((node) => {
+        node.animate(
+            [ { opacity: '0' } ],
+            {
+                duration: 200,
+                direction: 'alternate',
+                fill: 'forwards',
+            }
+        );
+    });
 }
 
 function changeQuestionAfterFadeOut() {
@@ -111,6 +135,19 @@ function changeProgressBar(progressRatio) {
 
 function changeProgressText(progressRatio) {
     progressText.innerText = `${Math.round(progressRatio * 100)}%`;
+}
+
+function fadeInAllNodes() {
+    nodes.forEach((node) => {
+        node.animate(
+            [ { opacity: '1' } ],
+            {
+                duration: 200,
+                direction: 'alternate',
+                fill: 'forwards',
+            }
+        );
+    });
 }
 
 function stopAnimation() {

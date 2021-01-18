@@ -48,7 +48,7 @@
     background-color: rgba(255, 196, 0, 0.7);
 }
 
-#main .image_copyright {
+#main .image-copyright {
     color: #ffffff;
     position: absolute;
     bottom: 15px;
@@ -59,7 +59,7 @@
     font-weight: 400;
 }
 
-#main .image_copyright a {
+#main .image-copyright a {
     text-decoration: underline;
     font-weight: 900;
 }

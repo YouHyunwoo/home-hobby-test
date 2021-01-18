@@ -2,13 +2,16 @@ import { test } from '../data/test.js';
 
 
 
+const page = document.querySelector('#pages');
+
 const title = document.querySelector('#result .title');
 const picture = document.querySelector('#result .picture img');
 const description = document.querySelector('#result .description');
-const imageCopyright = document.querySelector('#result .image_copyright a');
+const imageCopyright = document.querySelector('#result .picture .copyright');
+const imageCopyrightLink = document.querySelector('#result .image-copyright a');
 
 const shareButtons = Array.from(document.querySelectorAll('#result .share > li'));
-const linkCopyButton = document.querySelector('#result #linkCopy');
+const linkCopyButton = document.querySelector('#result #link-copy');
 
 const retryButton = document.querySelector('#result button#retry');
 
@@ -70,7 +73,14 @@ function copyToClipboard(text) {
 retryButton.addEventListener('click', moveToMainPage);
 
 function moveToMainPage() {
-    $('#pages').animate({'left': '0%'}, 200);
+    page.animate(
+        [ { left: '0%' } ],
+        {
+            duration: 400,
+            direction: 'alternate',
+            fill: 'forwards',
+        }
+    );
 }
 
 export function showResultPage() {
@@ -101,15 +111,22 @@ function showResultHobbyDescription(result) {
 
 function showResultHobbyImageCopyright(result) {
     if (result.imageCopyright) {
-        $('#result .result_image_copyright').show();
+        imageCopyright.style.visibility = 'visible';
         imageCopyright.href = result.imageCopyright;
     }
     else {
-        $('#result .result_image_copyright').hide();
-        imageCopyright.href = '';
+        imageCopyright.style.visibility = 'hidden';
+        imageCopyrightLink.href = '';
     }
 }
 
 function moveToResultPage() {
-    $('#pages').animate({'left': '-200%'}, 300);
+    page.animate(
+        [ { left: '-200%' } ],
+        {
+            duration: 300,
+            direction: 'alternate',
+            fill: 'forwards',
+        }
+    );
 }
