@@ -49,14 +49,10 @@
 }
 
 #main .image-copyright {
-    color: #ffffff;
-    position: absolute;
-    bottom: 15px;
-    right: 0;
-    left: 0;
-    margin: auto;
-    font-size: 12px;
+    margin-top: 15vw;
+    font-size: 2vw;
     font-weight: 400;
+    color: #ffffff;
 }
 
 #main .image-copyright a {
@@ -99,6 +95,11 @@
         border-radius: 30px;
         font-size: 30px;
         line-height: 50px;
+    }
+
+    #main .image-copyright {
+        margin-top: calc(15px * 5);
+        font-size: calc(2px * 5);
     }
 }
 
