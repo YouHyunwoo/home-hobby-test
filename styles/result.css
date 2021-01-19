@@ -9,6 +9,7 @@
     width: 100%;
     height: auto;
     padding: 10vw;
+    padding-bottom: 5vw;
     background:#20285d url(../images/result/background.jpg) top no-repeat;
     background-size: 100%;
 }
@@ -40,12 +41,14 @@
 }
 
 #result .picture .copyright {
+    margin: 0 auto;
     color: #ffffff;
-    font-size: 3vw;
+    font-size: 2vw;
     font-weight: 400;
-    position: absolute;
-    right: 0;
-    bottom: -15px;
+    text-align: end;
+    /* position: absolute; */
+    /* right: 0; */
+    /* bottom: -15px; */
 }
 
 #result .picture .copyright a {
@@ -128,6 +131,14 @@
     cursor: pointer;
 }
 
+#result .ad-banner {
+    width: 320px;
+    height: 100px;
+    margin: 0 auto;
+    margin-top: 12vw;
+    background-color: #fff;
+}
+
 #result #retry {
     width: 60vw;
     margin: auto;
@@ -153,7 +164,7 @@
     font-size: 12px;
     font-weight: 400;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 6vw;
 }
 
 #result .image-copyright a {
@@ -186,6 +197,7 @@
         max-width: 752px;
         margin: auto;
         padding: 75.2px;
+        padding-bottom: calc(5px * 7.52);
     }
 
     #result h2 {
@@ -205,7 +217,7 @@
 
     #result .picture .copyright {
         color: #ffffff;
-        font-size: 22.56px;
+        font-size: 15.04px;
     }
     
     #result .description {
@@ -234,5 +246,9 @@
     #result #link-copy {
         margin-top: 22.56px;
         font-size: 22.56px;
+    }
+
+    #result .ad-banner {
+        margin-top: calc(6px * 7.52);
     }
 }
