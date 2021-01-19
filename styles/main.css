@@ -49,10 +49,10 @@
 }
 
 #main .image-copyright {
-    margin-top: 15vw;
-    font-size: 2vw;
-    font-weight: 400;
     color: #ffffff;
+    font-size: 12px;
+    font-weight: 400;
+    margin-top: 15vw;
 }
 
 #main .image-copyright a {
