@@ -3,8 +3,8 @@ export class Test {
         this.results = results;
         this.questions = questions;
 
-        // this.active = true;
         this.scores = null;
+        this.rankingResults = null;
 
         this.reset();
     }
@@ -15,12 +15,16 @@ export class Test {
 
     reset() {
         this.resetScore();
+        this.resetRankingResult();
         this.resetQuestion();
-        // this.activate();
     }
 
     resetScore() {
         this.setAllScoreToZero();
+    }
+
+    resetRankingResult() {
+        this.rankingResults = null;
     }
 
     setAllScoreToZero() {
@@ -78,19 +82,24 @@ export class Test {
         return (this.currentQuestionIndex + 1) / this.questions.length;
     }
 
-    getHighestScore() {
-        let maxScore = this.scores[0];
-        let maxScoreIndex = 0;
+    sortScore() {
+        const sorted = this.scores
+            .map((score, index) => [score, this.results[index]])
+            .sort((a, b) => b[0] - a[0]);
+            
+        this.scores = sorted.map((value) => value[0]);
+        this.rankingResults = sorted.map((value) => value[1]);
+    }
 
-        const itemCount = this.results.length;
+    getFirstRankingResult() {
+        return this.rankingResults[0];
+    }
 
-        for (let i = 1; i < itemCount; i++) {
-            if (this.scores[i] > maxScore) {
-                maxScore = this.scores[i];
-                maxScoreIndex = i;
-            }
-        }
+    getLastRankingResult() {
+        return this.rankingResults[this.rankingResults.length - 1];
+    }
 
-        return this.results[maxScoreIndex];
+    getRankingResultByIndex(index) {
+        return this.rankingResults[index];
     }
 }
