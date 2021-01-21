@@ -42,13 +42,10 @@
 
 #result .picture .copyright {
     margin: 0 auto;
-    color: #ffffff;
     font-size: 2vw;
     font-weight: 400;
+    color: #ffffff;
     text-align: end;
-    /* position: absolute; */
-    /* right: 0; */
-    /* bottom: -15px; */
 }
 
 #result .picture .copyright a {
@@ -71,7 +68,24 @@
     position: relative;
 }
 
-#result .description p {
+#result .description:not(.first) {
+    margin-top: 5vw;
+}
+
+#result .description .title {
+    width: 100%;
+    height: auto;
+    margin: auto;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #fff;
+    font-size: 4vw;
+    font-family: 'Jua', sans-serif;
+    color: #ffffff;
+    text-align: center;
+}
+
+#result .description .content p {
     margin-top: 1em;
     font-size: 6vw;
     font-family: 'Jua', sans-serif;
@@ -80,45 +94,13 @@
     text-indent: 3vw;
 }
 
-#result .description p:first-child {
+#result .description .content p:first-child {
     margin-top: 0;
 }
 
-#result .description p b {
+#result .description .content p b {
     font-size: 7vw;
     color: orange;
-}
-
-#result .desc_title {
-    margin: auto;
-    width: 100%;
-    height: auto;
-    text-align: center;
-    color: #ffffff;
-    font-family: 'Jua', sans-serif;
-    font-size: 24px;
-    border-bottom: 3px solid #fff;
-    padding-bottom: 10px;
-}
-
-#result .description2 {
-    width: 100%;
-    height: auto;
-    margin-top: 2vw;
-    padding: 1vw;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5vw;
-    position: relative;
-}
-
-#result .description3 {
-    width: 100%;
-    height: auto;
-    margin-top: 2vw;
-    padding: 1vw;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius: 5vw;
-    position: relative;
 }
 
 #result .share {
@@ -212,7 +194,7 @@
 }
 
 @media only screen and (min-width: 500px) {
-    #result .description p {
+    #result .description .content p {
         font-size: 30px;
     }
 
@@ -259,11 +241,19 @@
         border-radius: 37.6px;
     }
 
-    #result .description p {
+    #result .description:not(.first) {
+        margin-top: calc(5px * 7.52);
+    }
+
+    #result .description .title {
+        font-size: calc(4px * 7.52);
+    }
+
+    #result .description .content p {
         text-indent: 22.56px;
     }
 
-    #result .description p b {
+    #result .description .content p b {
         font-size: 52.64px;
     }
 

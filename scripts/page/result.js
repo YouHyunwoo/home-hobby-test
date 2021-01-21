@@ -6,7 +6,7 @@ const page = document.querySelector('#pages');
 
 const title = document.querySelector('#result .title');
 const picture = document.querySelector('#result .picture img');
-const description = document.querySelector('#result .description');
+const descriptions = Array.from(document.querySelectorAll('#result .description'));
 const imageCopyright = document.querySelector('#result .picture .copyright');
 const imageCopyrightLink = document.querySelector('#result .image-copyright a');
 
@@ -84,17 +84,24 @@ function moveToMainPage() {
 }
 
 export function showResultPage() {
+    calculateResult();
     showResultHobby();
     moveToResultPage();
 }
 
-function showResultHobby() {
-    const result = test.getHighestScore();
+function calculateResult() {
+    test.sortScore();
+}
 
-    showResultHobbyText(result);
-    showResultHobbyPicture(result);
-    showResultHobbyDescription(result);
-    showResultHobbyImageCopyright(result);
+function showResultHobby() {
+    const firstResult = test.getFirstRankingResult();
+    const secondResult = test.getRankingResultByIndex(1);
+    const lastResult = test.getLastRankingResult();
+
+    showResultHobbyText(firstResult);
+    showResultHobbyPicture(firstResult);
+    showResultHobbyImageCopyright(firstResult);
+    showResultHobbyDescription([firstResult, secondResult, lastResult]);
 }
 
 function showResultHobbyText(result) {
@@ -103,10 +110,6 @@ function showResultHobbyText(result) {
 
 function showResultHobbyPicture(result) {
     picture.src = result.image;
-}
-
-function showResultHobbyDescription(result) {
-    description.innerHTML = result.description;
 }
 
 function showResultHobbyImageCopyright(result) {
@@ -118,6 +121,12 @@ function showResultHobbyImageCopyright(result) {
         imageCopyright.style.visibility = 'hidden';
         imageCopyrightLink.href = '';
     }
+}
+
+function showResultHobbyDescription(results) {
+    results.forEach((result, index) => {
+        descriptions[index].querySelector('.content').innerHTML = result.description;
+    });
 }
 
 function moveToResultPage() {
