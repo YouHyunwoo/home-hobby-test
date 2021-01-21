@@ -16,6 +16,7 @@
 
 #result .scroll > h1 {
     width: 100%;
+    margin-bottom: 5vw;
     font-size: 6vw;
     font-family: 'JalnanOTF', sans-serif;
     color: white;
@@ -23,10 +24,10 @@
 }
 
 #result .scroll > .title {
-    margin-top: 5vw;
+    margin-bottom: 16vw;
     font-size: 9vw;
     font-family: 'JalnanOTF', sans-serif;
-    color: orange;
+    color: white;
     text-align: center;
 }
 
@@ -34,7 +35,7 @@
     width: 62.8vw;
     height: 43vw;
     margin: 0 auto;
-    margin-top: 16vw;
+    margin-bottom: 29vw;
     position: relative;
     background-color: rgba(255, 99, 71,0.5);
     box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
@@ -60,16 +61,16 @@
 
 #result .description {
     width: 100%;
-    margin-top: 29vw;
+    margin-bottom: 10vw;
     padding: 5vw;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5vw;
     position: relative;
 }
 
-#result .description:not(.first) {
-    margin-top: 5vw;
-}
+/* #result .description:not(.last) {
+    margin-bottom: 5vw;
+} */
 
 #result .description h1 {
     width: 100%;
@@ -137,7 +138,7 @@
 #result .share {
     width: 60%;
     margin: auto;
-    margin-top: 10vw;
+    margin-bottom: 3vw;
     display: flex;
     justify-content: space-between;
 }
@@ -167,7 +168,7 @@
 }
 
 #result #link-copy {
-    margin-top: 2vw;
+    margin-bottom: 12vw;
     display: block;
     font-size: 3vw;
     font-family: 'Jua', sans-serif;
@@ -181,14 +182,14 @@
     width: 320px;
     height: 100px;
     margin: 0 auto;
-    margin-top: 12vw;
+    margin-bottom: 10vw;
     background-color: #fff;
 }
 
 #result #retry {
     width: 60vw;
     margin: auto;
-    margin-top: 10vw;
+    margin-bottom: 20vw;
     line-height: 10vw;
     display: block;
     background-color: transparent;
@@ -206,22 +207,22 @@
 }
 
 #result .image-copyright {
-    color: #ffffff;
+    /* margin-bottom: 3vw; */
     font-size: 12px;
     font-weight: 400;
+    color: #ffffff;
     text-align: center;
-    margin-top: 6vw;
 }
 
 #result .image-copyright a {
-    text-decoration: underline;
     font-weight: 900;
+    text-decoration: underline;
 }
 
 .herron_marron {
-    text-align: center;
-    color: #ffffff;
     font-size: 12px;
+    color: #ffffff;
+    text-align: center;
 }
 
 @media only screen and (min-width: 500px) {
@@ -231,7 +232,7 @@
 
     #result #retry {
         width: 300px;
-        margin-top: 50px;
+        margin-bottom: calc(20px * 5);
         line-height: 50px;
         border-width: 3px;
         font-size: 25px;
@@ -248,17 +249,18 @@
 
     #result .scroll > h1 {
         font-size: 45.12px;
+        margin-bottom: 37.6px;
     }
 
     #result .scroll > .title {
-        margin-top: 37.6px;
+        margin-bottom: 120.32px;
         font-size: 67.68px;
     }
 
     #result .scroll > .picture {
         width: 472.256px;
         height: 323.36px;
-        margin-top: 120.32px;
+        margin-bottom: 218.08px;
     }
 
     #result .scroll > .picture .copyright {
@@ -267,13 +269,9 @@
     }
     
     #result .description {
-        margin-top: 218.08px;
+        margin-bottom: 75.2px;
         padding: 37.6px;
         border-radius: 37.6px;
-    }
-
-    #result .description:not(.first) {
-        margin-top: calc(5px * 7.52);
     }
 
     #result .description h1 {
@@ -304,7 +302,7 @@
     }
 
     #result .share {
-        margin-top: 75.2px;
+        margin-bottom: 22.56px;
     }
 
     #result .share li {
@@ -313,11 +311,11 @@
     }
 
     #result #link-copy {
-        margin-top: 22.56px;
+        margin-bottom: calc(10px * 7.52);
         font-size: 22.56px;
     }
 
     #result .ad-banner {
-        margin-top: calc(6px * 7.52);
+        margin-bottom: calc(10px * 7.52);
     }
 }

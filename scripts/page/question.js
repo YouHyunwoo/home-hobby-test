@@ -22,7 +22,7 @@ function showNextQuestion() {
         showResultPage();
     }
     else {
-        showCurrentQuestionWithAnimation();
+        showCurrentQuestion();
     }
 }
 
@@ -32,6 +32,10 @@ function nextQuestion() {
 
 function isFinished() {
     return test.isFinished();
+}
+
+function showCurrentQuestion() {
+    changeQuestionAfterFadeOut();
 }
 
 function showCurrentQuestionWithAnimation() {
