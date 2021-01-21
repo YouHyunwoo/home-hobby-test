@@ -9,7 +9,7 @@ const progressBar = document.querySelector('#question .progress .bar');
 const progressText = document.querySelector('#question .progress .text');
 const choices = document.querySelector('#question .choices');
 
-const nodes = document.querySelectorAll('#question *');
+const nodes = document.querySelectorAll('#question .top-box, #question .choices');
 
 let isAnimating = false;
 
@@ -22,7 +22,7 @@ function showNextQuestion() {
         showResultPage();
     }
     else {
-        showCurrentQuestion();
+        showCurrentQuestionWithAnimation();
     }
 }
 
@@ -41,18 +41,24 @@ function showCurrentQuestion() {
 function showCurrentQuestionWithAnimation() {
     startAnimation();
 
-    new Promise((resolve) => {
+    delay(0)()
+    .then(() => {
         fadeOutAllNodes();
-
-        setTimeout(resolve, 200);
     })
+    .then(delay(200))
     .then(() => {
         changeQuestionAfterFadeOut();
 
         fadeInAllNodes();
+    })
+    .then(delay(200))
+    .then(() => {
+        stopAnimation();
+    })
+}
 
-        setTimeout(stopAnimation, 200);
-    });
+function delay(ms) {
+    return value => new Promise((resolve) => setTimeout(resolve, ms, value));
 }
 
 function startAnimation() {
