@@ -4,11 +4,11 @@ import { test } from '../data/test.js';
 
 const page = document.querySelector('#pages');
 
-const title = document.querySelector('#result .title');
-const picture = document.querySelector('#result .picture img');
+const title = document.querySelector('#result .scroll > .title');
+const picture = document.querySelector('#result .scroll > .picture img');
+const imageCopyright = document.querySelector('#result .scroll > .picture .copyright');
+// const imageCopyrightLink = document.querySelector('#result .scroll > .picture .copyright a');
 const descriptions = Array.from(document.querySelectorAll('#result .description'));
-const imageCopyright = document.querySelector('#result .picture .copyright');
-const imageCopyrightLink = document.querySelector('#result .image-copyright a');
 
 const shareButtons = Array.from(document.querySelectorAll('#result .share > li'));
 const linkCopyButton = document.querySelector('#result #link-copy');
@@ -105,28 +105,56 @@ function showResultHobby() {
 }
 
 function showResultHobbyText(result) {
+    showHobbyText(result, title);
+}
+
+function showHobbyText(result, title) {
     title.innerText = result.title;
 }
 
 function showResultHobbyPicture(result) {
+    showHobbyPicture(result, picture);
+}
+
+function showHobbyPicture(result, picture) {
     picture.src = result.image;
 }
 
 function showResultHobbyImageCopyright(result) {
+    showHobbyImageCopyright(imageCopyright, result);
+}
+
+function showHobbyImageCopyright(imageCopyright, result) {
     if (result.imageCopyright) {
         imageCopyright.style.visibility = 'visible';
-        imageCopyright.href = result.imageCopyright;
+        imageCopyright.querySelector('a').href = result.imageCopyright;
     }
     else {
         imageCopyright.style.visibility = 'hidden';
-        imageCopyrightLink.href = '';
+        imageCopyright.querySelector('a').href = '';
     }
 }
 
 function showResultHobbyDescription(results) {
     results.forEach((result, index) => {
-        descriptions[index].querySelector('.content').innerHTML = result.description;
+        const content = descriptions[index].querySelector('.content');
+
+        showHobbyDescription(result, content);
+
+        if (!descriptions[index].classList.contains('first')) {
+            const title = descriptions[index].querySelector('.title');
+            const picture = descriptions[index].querySelector('.picture img');
+            const imageCopyright = descriptions[index].querySelector('.picture .copyright a');
+
+            showHobbyText(result, title);
+            showHobbyPicture(result, picture);
+            showHobbyImageCopyright(imageCopyright, result);
+        }
     });
+}
+
+function showHobbyDescription(reseult, content) {
+    content.innerHTML = result.description;
 }
 
 function moveToResultPage() {
