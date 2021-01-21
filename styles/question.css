@@ -86,6 +86,10 @@
     margin-top: 0px;
 }
 
+#question .choice:last-child {
+    margin-bottom: 70px;
+}
+
 #question .ad-banner {
     width: 320px;
     height: 50px;
