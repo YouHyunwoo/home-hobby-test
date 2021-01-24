@@ -44,6 +44,10 @@
     line-height: 10vw;
 }
 
+#main #start-button:hover, #main #start-button:active {
+    background-color: rgba(255, 196, 0, 0.7);
+}
+
 #main .image-copyright {
     color: #ffffff;
     font-size: 12px;
@@ -93,9 +97,9 @@
         line-height: 50px;
     }
 
-    #main #start-button:hover {
+    /* #main #start-button:hover {
         background-color: rgba(255, 196, 0, 0.7);
-    }
+    } */
 
     #main .image-copyright {
         margin-top: calc(15px * 5);
