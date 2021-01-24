@@ -8,7 +8,7 @@
 #result .scroll {
     width: 100%;
     height: auto;
-    padding: 10vw;
+    padding-top: 10vw;
     padding-bottom: 5vw;
     background:#20285d url(../images/result/background.jpg) top no-repeat;
     background-size: 100%;
@@ -60,7 +60,7 @@
 }
 
 #result .description {
-    width: 100%;
+    margin: 0 10vw;
     margin-bottom: 10vw;
     padding: 5vw;
     background-color: rgba(0, 0, 0, 0.2);
@@ -207,7 +207,6 @@
 }
 
 #result .image-copyright {
-    /* margin-bottom: 3vw; */
     font-size: 12px;
     font-weight: 400;
     color: #ffffff;
@@ -243,7 +242,7 @@
     #result .scroll {
         max-width: 752px;
         margin: auto;
-        padding: 75.2px;
+        padding-top: calc(10px * 7.52);
         padding-bottom: calc(5px * 7.52);
     }
 
@@ -269,6 +268,7 @@
     }
     
     #result .description {
+        margin: 0 calc(10px * 7.52);
         margin-bottom: 75.2px;
         padding: 37.6px;
         border-radius: 37.6px;
