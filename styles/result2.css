@@ -1,0 +1,277 @@
+body {
+    background-color: rgba(32, 40, 93, 0.6);
+    color: #ffffff;
+}
+
+.content {
+    margin: 0 auto;
+    padding: 10vw 0;
+    background: #20285d url(../images/result/background.jpg) top no-repeat;
+    background-size: 100%;
+}
+
+header {
+    height: 98.5vw;
+    margin: 0 auto;
+}
+
+header h1 {
+    margin-bottom: 16vw;
+    font-size: 6vw;
+    font-family: 'Jua', sans-serif;
+    line-height: 10vw;
+    text-align: center;
+}
+
+header h1 .hobby {
+    font-size: 9vw;
+}
+
+figure {
+    margin: 0 auto;
+    text-align: center;
+}
+
+header figure {
+    width: 62.8vw;
+    height: 43vw;
+}
+
+figure img {
+    width: 100%;
+    height: 100%;
+}
+
+header figure img {
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
+}
+
+figure figcaption {
+    margin: 0 auto;
+    font-size: 2vw;
+    text-align: end;
+}
+
+figure figcaption a, .image-copyright a {
+    font-weight: 900;
+    text-decoration: underline;
+}
+
+.description article {
+    margin: 10vw;
+    padding: 5vw;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5vw;
+}
+
+.description article h1 {
+    height: auto;
+    margin: 0 auto;
+    margin-bottom: 3vw;
+    padding-bottom: 2vw;
+    border-bottom: 3px solid #fff;
+    font-size: 4vw;
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+}
+
+.description article h2 {
+    margin-bottom: 3vw;
+    display: block;
+    font-size: 5vw;
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+}
+
+.description article figure {
+    width: 45vw;
+    margin-bottom: 3vw;
+}
+
+.description article p {
+    font-size: 6vw;
+    font-family: 'Jua', sans-serif;
+    letter-spacing: 0.02em;
+    text-indent: 3vw;
+}
+
+.share {
+    margin-bottom: 12vw;
+}
+
+.share ul {
+    width: 50vw;
+    margin: 0 auto;
+    margin-bottom: 3vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.share ul li {
+    width: 10vw;
+    height: 10vw;
+    background-color: white;
+    border-radius: 20vw;
+    cursor: pointer;
+}
+
+.share li#facebook {
+    background: url(/images/result/sns/facebook.png) center/cover no-repeat;
+}
+
+.share li#twitter {
+    background: url(/images/result/sns/twitter.png) center/cover no-repeat;
+}
+
+.share li#kakaostory {
+    background: url(/images/result/sns/kakaostory.png) center/cover no-repeat;
+}
+
+.share li#kakaotalk {
+    background: url(/images/result/sns/kakaotalk.png) center/cover no-repeat;
+}
+
+.share a {
+    display: block;
+    font-size: 4vw;
+    font-family: 'Jua', sans-serif;
+    text-align: center;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.advertisement {
+    width: 320px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 10vw;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.retry a {
+    width: 60vw;
+    margin: 0 auto;
+    margin-bottom: 20vw;
+    line-height: 10vw;
+    display: block;
+    background-color: transparent;
+    border: 3px solid white;
+    border-radius: 5vw;
+    font-size: 5vw;
+    font-family: 'JalnanOTF', sans-serif;
+    color: #ffffff;
+    text-align: center;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+footer p {
+    margin: 2vw auto;
+    font-size: 12px;
+    text-align: center;
+}
+
+@media only screen and (min-width: 500px) {
+    .description article p {
+        font-size: 30px;
+    }
+
+    .retry a {
+        width: 300px;
+        margin-bottom: calc(20px * 5);
+        line-height: 50px;
+        border-width: 3px;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .content {
+        max-width: 752px;
+        padding: calc(10px * 7.52) 0;
+    }
+
+    header {
+        height: calc(98.5px * 7.52);
+    }
+
+    header h1 {
+        margin-bottom: calc(16px * 7.52);
+        font-size: calc(6px * 7.52);
+        line-height: calc(10px * 7.52);
+    }
+
+    header h1 .hobby {
+        font-size: calc(9px * 7.52);
+    }
+
+    header figure {
+        width: calc(62.8px * 7.52);
+        height: calc(43px * 7.52);
+    }
+
+    figure figcaption {
+        font-size: calc(2px * 7.52);
+    }
+
+    .description article {
+        margin: calc(10px * 7.52);
+        padding: calc(5px * 7.52);
+        border-radius: calc(5px * 7.52);
+    }
+
+    .description article h1 {
+        margin-bottom: calc(3px * 7.52);
+        padding-bottom: calc(2px * 7.52);
+        font-size: calc(4px * 7.52);
+    }
+
+    .description article h2 {
+        margin-bottom: calc(3px * 7.52);
+        font-size: calc(5px * 7.52);
+    }
+
+    .description article figure {
+        width: calc(45px * 7.52);
+        margin-bottom: calc(3px * 7.52);
+    }
+
+    .description article p {
+        text-indent: calc(3px * 7.52);
+    }
+
+    .share {
+        margin-bottom: calc(12px * 7.52);
+    }
+
+    .share ul {
+        width: calc(50px * 7.52);
+        margin-bottom: calc(3px * 7.52);
+    }
+
+    .share ul li {
+        width: calc(10px * 7.52);
+        height: calc(10px * 7.52);
+        border-radius: calc(20px * 7.52);
+    }
+
+    .share a {
+        font-size: calc(4px * 7.52);
+    }
+
+    .advertisement {
+        margin-bottom: calc(10px * 7.52);
+    }
+
+    .retry button {
+        width: calc(60px * 7.52);
+        margin-bottom: calc(20px * 7.52);
+        line-height: calc(10px * 7.52);
+        border-radius: calc(5px * 7.52);
+        font-size: calc(5px * 7.52);
+    }
+
+    footer p {
+        margin: calc(2px * 7.52) auto;
+    }
+}
