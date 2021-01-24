@@ -78,10 +78,6 @@
     cursor: pointer;
 }
 
-#question .choice:hover {
-    background-color: rgba(255, 196, 0, 0.7);
-}
-
 #question .choice:first-child {
     margin-top: 0px;
 }
@@ -129,5 +125,9 @@
     #question .choice {
         max-width: 600px;
         font-size: 24px;
+    }
+
+    #question .choice:hover {
+        background-color: rgba(255, 196, 0, 0.7);
     }
 }

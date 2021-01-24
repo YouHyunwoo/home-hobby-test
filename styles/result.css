@@ -202,10 +202,6 @@
     cursor: pointer;
 }
 
-#result #retry:hover {
-    background-color: rgba(255, 196, 0, 0.7);
-}
-
 #result .image-copyright {
     font-size: 12px;
     font-weight: 400;
@@ -317,5 +313,9 @@
 
     #result .ad-banner {
         margin-bottom: calc(10px * 7.52);
+    }
+
+    #result #retry:hover {
+        background-color: rgba(255, 196, 0, 0.7);
     }
 }
