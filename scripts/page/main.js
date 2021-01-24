@@ -10,7 +10,14 @@ const startButtons = Array.from(document.querySelectorAll('#main .test-start'));
 
 
 
-startButtons.forEach((button) => { button.addEventListener('click', startTest); });
+startButtons.forEach((button) => {
+    if ('ontouchstart' in document.documentElement) {
+        button.addEventListener('touchstart', startTest);
+    }
+    else {
+        button.addEventListener('click', startTest);
+    }
+});
 
 
 
