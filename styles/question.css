@@ -11,11 +11,11 @@
     flex-direction: column;
 }
 
-#question .top-box {
+#question header {
     padding: 30px;
 }
 
-#question h1 {
+#question header h1 {
     width: 100%;
     margin: auto;
     font-size: 18px;
@@ -24,13 +24,13 @@
     line-height: 1.5;
 }
 
-#question .progress {
+#question header .progress {
     width: 100%;
     margin: auto;
     margin-top: 4vw;
 }
 
-#question .progress .border {
+#question header .progress .border {
     width: 100%;
     height: auto;
     position: relative;
@@ -39,13 +39,13 @@
     padding: 1px;
 }
 
-#question .progress .bar {
+#question header .progress .bar {
     width: 10%;
     height: 1.6vw;
     background-color: #5f135f;
 }
 
-#question .progress .text {
+#question header .progress .text {
     margin-top: 10px;
     font-size: 4vw;
     font-family: 'JalnanOTF', sans-serif;
@@ -55,16 +55,14 @@
 
 #question .choices {
     width: 100%;
-    padding: 20px;
-    padding-top: 0;
+    padding: 0 30px;
     overflow-y: auto;
 }
 
 #question .choice {
     width: 90%;
     height: auto;
-    margin: auto;
-    margin-top: 30px;
+    margin: 30px auto;
     padding: 5px 20px;
     display: block;
     border: 3px solid white;
@@ -76,14 +74,6 @@
     text-align: center;
     letter-spacing: 1px;
     cursor: pointer;
-}
-
-#question .choice:first-child {
-    margin-top: 0px;
-}
-
-#question .choice:last-child {
-    margin-bottom: 70px;
 }
 
 #question .ad-banner {
@@ -102,24 +92,21 @@
         margin-top: 20px;
     }
 
-    #question h1 {
+    #question header h1 {
         max-width: 700px;
+        font-size: 30px;
     }
 
-    #question .progress .border {
+    #question header .progress .border {
         width: 400px;
     }
 
-    #question .progress .bar {
+    #question header .progress .bar {
         height: 8px;
     }
 
-    #question .progress .text {
+    #question header .progress .text {
         font-size: 20px;
-    }
-
-    #question h1 {
-        font-size: 30px;
     }
 
     #question .choice {
