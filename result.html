@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
@@ -11,10 +11,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="styles/common.css">
-    <link rel="stylesheet" href="styles/result2.css">
+    <link rel="stylesheet" href="styles/result.css">
 
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script type="module" src="scripts/page/result2.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
+    <script type="module" src="scripts/page/result.js"></script>
 </head>
 
 <body>
@@ -22,11 +24,11 @@
         <header>
             <h1>
                 당신의 취미는<br />
-                <span class='hobby'>취미 이름</span>
+                <span class='hobby'></span>
             </h1>
 
             <figure>
-                <img src="images/result/hobby/puzzle painting.jpg" alt="취미">
+                <img alt="취미">
                 <figcaption>Imaged by <a>Freepik</a></figcaption>
             </figure>
         </header>
@@ -36,9 +38,6 @@
                 <h1>
                     이 취미를 가장 추천해요!
                 </h1>
-                <p>
-                    취미 내용
-                </p>
             </article>
 
             <article>
@@ -46,15 +45,12 @@
                     아니면 이 취미는 어때요?
                 </h1>
                 <h2>
-                    취미 이름
+                    
                 </h2>
                 <figure>
                     <img alt="취미">
                     <figcaption>Imaged by <a>Freepik</a></figcaption>
                 </figure>
-                <p>
-                    취미 내용
-                </p>
             </article>
 
             <article class="last">
@@ -62,15 +58,12 @@
                     때로는 의외의 결과가 나올수도 있어요
                 </h1>
                 <h2>
-                    취미 이름
+                    
                 </h2>
                 <figure>
                     <img alt="취미">
                     <figcaption>Imaged by <a>Freepik</a></figcaption>
                 </figure>
-                <p>
-                    취미 내용
-                </p>
             </article>
         </section>
 
@@ -82,12 +75,13 @@
                 <li id="kakaotalk"></li>
             </ul>
 
-            <a id="link-copy">링크복사</a>
+            <a id="link-copy">링크 복사</a>
+            <a id="result-copy">결과 이미지 복사</a>
         </section>
 
         <section class="advertisement">
-            <!-- <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fZsYpKIS0dlTJGNn" data-ad-width="320"
-                data-ad-height="100"></ins> -->
+            <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fZsYpKIS0dlTJGNn" data-ad-width="320"
+                data-ad-height="100"></ins>
         </section>
 
         <section class="retry">
@@ -104,6 +98,8 @@
             <p class="herron_marron">Copyright(c) 2021 HERRONMARRON</p>
         </footer>
     </section>
+
+    <script type="text/javascript" src="//t1.daumcdn.net/kas/static/ba.min.js" async></script>
 </body>
 
 </html>

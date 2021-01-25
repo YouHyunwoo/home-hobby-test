@@ -1,149 +1,116 @@
-#result {
-    padding: 0;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background-color:rgba(32, 40, 93, 0.6);
+body {
+    height: auto;
+    background-color: rgba(32, 40, 93, 0.6);
+    color: #ffffff;
 }
 
-#result .scroll {
-    width: 100%;
-    height: auto;
-    padding-top: 10vw;
-    padding-bottom: 5vw;
-    background:#20285d url(../images/result/background.jpg) top no-repeat;
+.content {
+    margin: 0 auto;
+    padding: 10vw 0;
+    background: #20285d url(../images/result/background.jpg) top no-repeat;
     background-size: 100%;
 }
 
-#result .scroll > h1 {
-    width: 100%;
-    margin-bottom: 5vw;
-    font-size: 6vw;
-    font-family: 'JalnanOTF', sans-serif;
-    color: white;
-    text-align: center;
+header {
+    height: 98.5vw;
+    margin: 0 auto;
 }
 
-#result .scroll > .title {
+header h1 {
     margin-bottom: 16vw;
-    font-size: 9vw;
-    font-family: 'JalnanOTF', sans-serif;
-    color: white;
+    font-size: 6vw;
+    font-family: 'Jua', sans-serif;
+    line-height: 10vw;
     text-align: center;
 }
 
-#result .scroll > .picture {
+header h1 .hobby {
+    font-size: 9vw;
+}
+
+figure {
+    margin: 0 auto;
+    text-align: center;
+}
+
+header figure {
     width: 62.8vw;
     height: 43vw;
-    margin: 0 auto;
-    margin-bottom: 29vw;
-    position: relative;
-    background-color: rgba(255, 99, 71,0.5);
-    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
 }
 
-#result .scroll > .picture > img {
+figure img {
     width: 100%;
     height: 100%;
 }
 
-#result .scroll > .picture .copyright {
+header figure img {
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.5);
+}
+
+figure figcaption {
     margin: 0 auto;
     font-size: 2vw;
-    font-weight: 400;
-    color: #ffffff;
     text-align: end;
 }
 
-#result .scroll > .picture .copyright a {
-    text-decoration: underline;
+figure figcaption a, .image-copyright a {
     font-weight: 900;
+    text-decoration: underline;
 }
 
-#result .description {
-    margin: 0 10vw;
-    margin-bottom: 10vw;
+.description article {
+    margin: 10vw;
     padding: 5vw;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 5vw;
-    position: relative;
 }
 
-/* #result .description:not(.last) {
-    margin-bottom: 5vw;
-} */
-
-#result .description h1 {
-    width: 100%;
+.description article h1 {
     height: auto;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 3vw;
-    padding-bottom: 10px;
+    padding-bottom: 2vw;
     border-bottom: 3px solid #fff;
     font-size: 4vw;
     font-family: 'Jua', sans-serif;
-    color: #ffffff;
     text-align: center;
 }
 
-#result .description .title {
+.description article h2 {
     margin-bottom: 3vw;
     display: block;
     font-size: 5vw;
     font-family: 'Jua', sans-serif;
     text-align: center;
-    color: #ffffff;
 }
 
-#result .description .picture {
+.description article figure {
     width: 45vw;
-    margin: auto;
     margin-bottom: 3vw;
 }
 
-#result .description .picture img {
-    width: 100%;
-}
-
-#result .description .picture .copyright {
-    margin: 0 auto;
-    font-size: 2vw;
-    font-weight: 400;
-    color: #ffffff;
-    text-align: end;
-}
-
-#result .description .picture .copyright a {
-    text-decoration: underline;
-    font-weight: 900;
-}
-
-#result .description .content p {
-    margin-top: 1em;
+.description article p {
+    margin-top: 3vw;
     font-size: 6vw;
     font-family: 'Jua', sans-serif;
-    color: #ffffff;
     letter-spacing: 0.02em;
     text-indent: 3vw;
 }
 
-#result .description .content p:first-child {
-    margin-top: 0;
+.share {
+    margin-bottom: 12vw;
+    text-align: center;
 }
 
-#result .description .content p b {
-    font-size: 7vw;
-    color: orange;
-}
-
-#result .share {
-    width: 60%;
-    margin: auto;
+.share ul {
+    width: 50vw;
+    margin: 0 auto;
     margin-bottom: 3vw;
     display: flex;
     justify-content: space-between;
 }
 
-#result .share li {
+.share ul li {
     width: 10vw;
     height: 10vw;
     background-color: white;
@@ -151,44 +118,42 @@
     cursor: pointer;
 }
 
-#result .share li#facebook {
+.share li#facebook {
     background: url(/images/result/sns/facebook.png) center/cover no-repeat;
 }
 
-#result .share li#twitter {
+.share li#twitter {
     background: url(/images/result/sns/twitter.png) center/cover no-repeat;
 }
 
-#result .share li#kakaostory {
+.share li#kakaostory {
     background: url(/images/result/sns/kakaostory.png) center/cover no-repeat;
 }
 
-#result .share li#kakaotalk {
+.share li#kakaotalk {
     background: url(/images/result/sns/kakaotalk.png) center/cover no-repeat;
 }
 
-#result #link-copy {
-    margin-bottom: 12vw;
+.share a {
     display: block;
-    font-size: 3vw;
+    font-size: 4vw;
     font-family: 'Jua', sans-serif;
-    color: white;
-    text-decoration: underline;
     text-align: center;
+    text-decoration: underline;
     cursor: pointer;
 }
 
-#result .ad-banner {
+.advertisement {
     width: 320px;
     height: 100px;
     margin: 0 auto;
     margin-bottom: 10vw;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
-#result #retry {
+.retry a {
     width: 60vw;
-    margin: auto;
+    margin: 0 auto;
     margin-bottom: 20vw;
     line-height: 10vw;
     display: block;
@@ -198,34 +163,23 @@
     font-size: 5vw;
     font-family: 'JalnanOTF', sans-serif;
     color: #ffffff;
+    text-align: center;
     letter-spacing: 1px;
     cursor: pointer;
 }
 
-#result .image-copyright {
+footer p {
+    margin: 2vw auto;
     font-size: 12px;
-    font-weight: 400;
-    color: #ffffff;
-    text-align: center;
-}
-
-#result .image-copyright a {
-    font-weight: 900;
-    text-decoration: underline;
-}
-
-.herron_marron {
-    font-size: 12px;
-    color: #ffffff;
     text-align: center;
 }
 
 @media only screen and (min-width: 500px) {
-    #result .description .content p {
+    .description article p {
         font-size: 30px;
     }
 
-    #result #retry {
+    .retry a {
         width: 300px;
         margin-bottom: calc(20px * 5);
         line-height: 50px;
@@ -235,87 +189,93 @@
 }
 
 @media only screen and (min-width: 768px) {
-    #result .scroll {
+    .content {
         max-width: 752px;
-        margin: auto;
-        padding-top: calc(10px * 7.52);
-        padding-bottom: calc(5px * 7.52);
+        padding: calc(10px * 7.52) 0;
     }
 
-    #result .scroll > h1 {
-        font-size: 45.12px;
-        margin-bottom: 37.6px;
+    header {
+        height: calc(98.5px * 7.52);
     }
 
-    #result .scroll > .title {
-        margin-bottom: 120.32px;
-        font-size: 67.68px;
+    header h1 {
+        margin-bottom: calc(16px * 7.52);
+        font-size: calc(6px * 7.52);
+        line-height: calc(10px * 7.52);
     }
 
-    #result .scroll > .picture {
-        width: 472.256px;
-        height: 323.36px;
-        margin-bottom: 218.08px;
+    header h1 .hobby {
+        font-size: calc(9px * 7.52);
     }
 
-    #result .scroll > .picture .copyright {
-        color: #ffffff;
-        font-size: 15.04px;
-    }
-    
-    #result .description {
-        margin: 0 calc(10px * 7.52);
-        margin-bottom: 75.2px;
-        padding: 37.6px;
-        border-radius: 37.6px;
+    header figure {
+        width: calc(62.8px * 7.52);
+        height: calc(43px * 7.52);
     }
 
-    #result .description h1 {
-        font-size: calc(4px * 7.52);
+    figure figcaption {
+        font-size: calc(2px * 7.52);
+    }
+
+    .description article {
+        margin: calc(10px * 7.52);
+        padding: calc(5px * 7.52);
+        border-radius: calc(5px * 7.52);
+    }
+
+    .description article h1 {
         margin-bottom: calc(3px * 7.52);
+        padding-bottom: calc(2px * 7.52);
+        font-size: calc(4px * 7.52);
     }
 
-    #result .description .title {
+    .description article h2 {
         margin-bottom: calc(3px * 7.52);
         font-size: calc(5px * 7.52);
     }
 
-    #result .description .picture {
+    .description article figure {
         width: calc(45px * 7.52);
         margin-bottom: calc(3px * 7.52);
     }
 
-    #result .description .picture .copyright {
-        font-size: calc(2px * 7.52);
+    .description article p {
+        margin-top: calc(3px * 7.52);
+        text-indent: calc(3px * 7.52);
     }
 
-    #result .description .content p {
-        text-indent: 22.56px;
+    .share {
+        margin-bottom: calc(12px * 7.52);
     }
 
-    #result .description .content p b {
-        font-size: 52.64px;
+    .share ul {
+        width: calc(50px * 7.52);
+        margin-bottom: calc(3px * 7.52);
     }
 
-    #result .share {
-        margin-bottom: 22.56px;
+    .share ul li {
+        width: calc(10px * 7.52);
+        height: calc(10px * 7.52);
+        border-radius: calc(20px * 7.52);
     }
 
-    #result .share li {
-        width: 75.2px;
-        height: 75.2px;
+    .share a {
+        font-size: calc(4px * 7.52);
     }
 
-    #result #link-copy {
-        margin-bottom: calc(10px * 7.52);
-        font-size: 22.56px;
-    }
-
-    #result .ad-banner {
+    .advertisement {
         margin-bottom: calc(10px * 7.52);
     }
 
-    #result #retry:hover {
-        background-color: rgba(255, 196, 0, 0.7);
+    .retry button {
+        width: calc(60px * 7.52);
+        margin-bottom: calc(20px * 7.52);
+        line-height: calc(10px * 7.52);
+        border-radius: calc(5px * 7.52);
+        font-size: calc(5px * 7.52);
+    }
+
+    footer p {
+        margin: calc(2px * 7.52) auto;
     }
 }

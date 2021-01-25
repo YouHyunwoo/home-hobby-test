@@ -25,28 +25,39 @@
     <link rel="stylesheet" href="styles/common.css">
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/question.css">
-    <link rel="stylesheet" href="styles/result.css">
-
+    
     <script data-ad-client="ca-pub-7276460575738241" async
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
     <script type="module" src="scripts/page/main.js"></script>
     <script type="module" src="scripts/page/question.js"></script>
-    <script type="module" src="scripts/page/result.js"></script>
 </head>
 
 <body>
     <div class="wrap">
         <ul id="pages">
             <li id="main">
-                <div class="scroll">
-                    <div class="title">
-                        <img src="images/main/title.png">
-                    </div>
+                <header>
+                    <figure>
+                        <img src="images/main/title.png" alt="제목">
+                    </figure>
+                    <p>나에게 딱 맞는 집콕 취미 테스트</p>
+                </header>
 
-                    <p class="sub-title">나에게 딱 맞는 집콕 취미 테스트</p>
+                <section class="start">
+                    <a>시작하기</a>
+                </section>
 
-                    <a id="start-button" class="test-start round-rect-button">시작하기</a>
+                <section class="share">
+                    <ul>
+                        <li id="facebook"></li>
+                        <li id="twitter"></li>
+                        <li id="kakaostory"></li>
+                        <li id="kakaotalk"></li>
+                    </ul>
+                </section>
+
+                <footer>
                     <h3 class="image-copyright">
                         Designed by
                         <a
@@ -54,10 +65,11 @@
                             Freepik
                         </a>
                     </h3>
-                </div>
+                </footer>
             </li>
 
             <li id="question">
+                <section class="question"></section>
                 <div class="top-box">
                     <h1>
                         질문
@@ -80,102 +92,6 @@
                 <div class="ad-banner">
                     <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-UDplZwxVUUppuRh3"
                         data-ad-width="320" data-ad-height="50"></ins>
-                </div>
-            </li>
-
-            <li id="result">
-                <div class="scroll">
-                    <h1>
-                        당신의 취미는
-                    </h1>
-
-                    <h2 class="title">취미 이름</h2>
-
-                    <div class="picture">
-                        <img src="images/result/hobby/puzzle painting.jpg" alt="취미">
-                        <h6 class="copyright">
-                            Imaged by
-                            <a href="https://www.freepik.com/free-vector/student-s-desk_723646.htm">
-                                Freepik
-                            </a>
-                        </h6>
-                    </div>
-
-                    <div class="description first">
-                        <h1>
-                            이 취미를 가장 추천해요!
-                        </h1>
-                        <div class="content">
-                            취미 내용
-                        </div>
-                    </div>
-
-                    <div class="description">
-                        <h1>
-                            아니면 이 취미는 어때요?
-                        </h1>
-                        <h2 class="title">
-                            취미 이름
-                        </h2>
-                        <div class="picture">
-                            <img src="images/result/hobby/puzzle painting.jpg" alt="취미">
-                            <h6 class="copyright">
-                                Imaged by
-                                <a href="https://www.freepik.com/free-vector/student-s-desk_723646.htm">
-                                    Freepik
-                                </a>
-                            </h6>
-                        </div>
-                        <div class="content">
-                            취미 내용
-                        </div>
-                    </div>
-
-                    <div class="description last">
-                        <h1>
-                            때로는 의외의 결과가 나올수도 있어요
-                        </h1>
-                        <h2 class="title">
-                            취미 이름
-                        </h2>
-                        <div class="picture">
-                            <img src="images/result/hobby/puzzle painting.jpg" alt="취미">
-                            <h6 class="copyright">
-                                Imaged by
-                                <a href="https://www.freepik.com/free-vector/student-s-desk_723646.htm">
-                                    Freepik
-                                </a>
-                            </h6>
-                        </div>
-                        <div class="content">
-                            취미 내용
-                        </div>
-                    </div>
-
-                    <ul class="share">
-                        <li id="facebook"></li>
-                        <li id="twitter"></li>
-                        <li id="kakaostory"></li>
-                        <li id="kakaotalk"></li>
-                    </ul>
-
-                    <a id="link-copy">링크복사</a>
-
-                    <div class="ad-banner">
-                        <ins class="kakao_ad_area" style="display:none;" data-ad-unit="DAN-fZsYpKIS0dlTJGNn"
-                            data-ad-width="320" data-ad-height="100"></ins>
-                    </div>
-
-                    <button type="button" id="retry">다시하기</button>
-
-                    <h3 class="image-copyright">
-                        Designed by
-                        <a
-                            href="https://www.freepik.com/free-vector/girl-bedroom-interior-on-attic-at-night_7588808.htm">
-                            Freepik
-                        </a>
-                    </h3>
-                    <h4 class="herron_marron">Copyright(c) 2021 HERRONMARRON</h4>
                 </div>
             </li>
         </ul>

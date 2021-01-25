@@ -102,4 +102,12 @@ export class Test {
     getRankingResultByIndex(index) {
         return this.rankingResults[index];
     }
+
+    getResultByIndex(index) {
+        return this.results[index];
+    }
+
+    getResultIndex(result) {
+        return this.results.indexOf(result);
+    }
 }

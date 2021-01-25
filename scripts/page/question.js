@@ -1,7 +1,5 @@
 import { test } from '../data/test.js';
 
-import { showResultPage } from './result.js';
-
 
 
 const questionText = document.querySelector('#question h1');
@@ -19,6 +17,7 @@ function showNextQuestion() {
     nextQuestion();
 
     if (isFinished()) {
+        calculateResult();
         showResultPage();
     }
     else {
@@ -32,6 +31,38 @@ function nextQuestion() {
 
 function isFinished() {
     return test.isFinished();
+}
+
+function calculateResult() {
+    test.sortScore();
+}
+
+function showResultPage() {
+    const firstResultIndex = test.getResultIndex(test.getFirstRankingResult());
+    const secondResultIndex = test.getResultIndex(test.getRankingResultByIndex(1));
+    const lastResultIndex = test.getResultIndex(test.getLastRankingResult());
+
+    const parameters = {
+        'r1': firstResultIndex,
+        'r2': secondResultIndex,
+        'r3': lastResultIndex
+    }
+
+    const parameterInURL = generateParameterInURL(parameters);
+
+    window.location.href = 'result.html' + parameterInURL;
+}
+
+function generateParameterInURL(parameters) {
+    const pairs = [];
+
+    for (const key in parameters) {
+        const value = parameters[key];
+
+        pairs.push(`${key}=${value}`);
+    }
+
+    return '?' + pairs.join('&');
 }
 
 function showCurrentQuestion() {

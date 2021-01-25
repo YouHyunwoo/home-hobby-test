@@ -2,18 +2,15 @@ import { test } from '../data/test.js';
 
 
 
-const page = document.querySelector('#pages');
+const title = document.querySelector('header h1 .hobby');
+const picture = document.querySelector('header figure img');
+const imageCopyright = document.querySelector('header figure figcaption');
+const descriptions = Array.from(document.querySelectorAll('.description article'));
 
-const title = document.querySelector('#result .scroll > .title');
-const picture = document.querySelector('#result .scroll > .picture img');
-const imageCopyright = document.querySelector('#result .scroll > .picture .copyright');
-// const imageCopyrightLink = document.querySelector('#result .scroll > .picture .copyright a');
-const descriptions = Array.from(document.querySelectorAll('#result .description'));
+const shareButtons = Array.from(document.querySelectorAll('.share ul li'));
+const linkCopyButton = document.querySelector('.share a#link-copy');
+const ResultCopyButton = document.querySelector('.share a#result-copy');
 
-const shareButtons = Array.from(document.querySelectorAll('#result .share > li'));
-const linkCopyButton = document.querySelector('#result #link-copy');
-
-const retryButton = document.querySelector('#result button#retry');
 
 const currentUrl = window.location.href;
 const snsUrls = {
@@ -36,12 +33,14 @@ shareButtons.forEach((button) => {
 });
 
 function shareKakaotalk(e) {
+    const host = window.location.host;
+    
     Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
             title: '집콕 취미 테스트',
             description: '당신에게 알맞는 집콕 취미를 추천해드립니다!',
-            imageUrl: currentUrl + '/images/result/thumbnail.jpg',
+            imageUrl: host + '/images/result/thumbnail.jpg',
             link: {
                 webUrl: currentUrl,
                 mobileWebUrl: currentUrl,
@@ -56,8 +55,25 @@ function shareSNS(e) {
 
 
 linkCopyButton.addEventListener('click', (e) => {
-    copyToClipboard('http://homehobby.netlify.app');
-    alert('복사 완료!');
+    copyToClipboard(window.location.href);
+
+    alert('링크 복사 완료!');
+});
+
+ResultCopyButton.addEventListener('click', (e) => {
+    const content = document.querySelector('.content');
+
+    html2canvas(content, { scrollY: -window.scrollY }).then(canvas => {
+        canvas.toBlob(function(blob) {
+            const item = new ClipboardItem({ "image/png": blob });
+
+            console.log(item);
+
+            navigator.clipboard.write([item]);
+        });
+    });
+
+    alert('이미지 복사 완료!');
 });
 
 function copyToClipboard(text) {
@@ -70,48 +86,40 @@ function copyToClipboard(text) {
 }
 
 
-retryButton.addEventListener('click', () => {
-    moveToMainPage();
-    scrollTop();
-});
+function showResult() {
+    const parameters = parseURLParamerter(currentUrl);
 
-function moveToMainPage() {
-    page.animate(
-        [ { left: '0%' } ],
-        {
-            duration: 400,
-            direction: 'alternate',
-            fill: 'forwards',
-        }
-    );
-}
+    const firstResultIndex = parameters['r1'];
+    const secondResultIndex = parameters['r2'];
+    const lastResultIndex = parameters['r3'];
 
-function scrollTop() {
-    setTimeout(() => {
-        document.querySelector('#result').scrollTo(0, 0);
-    }, 400);
-}
-
-
-export function showResultPage() {
-    calculateResult();
-    showResultHobby();
-    moveToResultPage();
-}
-
-function calculateResult() {
-    test.sortScore();
-}
-
-function showResultHobby() {
-    const firstResult = test.getFirstRankingResult();
-    const secondResult = test.getRankingResultByIndex(1);
-    const lastResult = test.getLastRankingResult();
+    const firstResult = test.getResultByIndex(firstResultIndex);
+    const secondResult = test.getResultByIndex(secondResultIndex);
+    const lastResult = test.getResultByIndex(lastResultIndex);
 
     showResultHobbyText(firstResult);
     showResultHobbyPicture(firstResult);
     showResultHobbyImageCopyright(firstResult);
     showResultHobbyDescription([firstResult, secondResult, lastResult]);
+}
+
+function parseURLParamerter(url) {
+    const result = {};
+
+    const questionMarkPosition = url.indexOf('?');
+
+    console.assert(questionMarkPosition >= 0);
+
+    const parameterPart = url.slice(questionMarkPosition + 1);
+    const eachParameter = parameterPart.split('&');
+
+    eachParameter.forEach(parameter => {
+        const [key, value] = parameter.split('=');
+
+        result[decodeURIComponent(key)] = decodeURIComponent(value);
+    });
+
+    return result;
 }
 
 function showResultHobbyText(result) {
@@ -149,14 +157,12 @@ function showResultHobbyDescription(results) {
     results.forEach((result, index) => {
         const description = descriptions[index];
 
-        const content = description.querySelector('.content');
-
-        showHobbyDescription(result, content);
+        showHobbyDescription(result, description);
 
         if (!isMainHobby(description)) {
-            const title = description.querySelector('.title');
-            const picture = description.querySelector('.picture img');
-            const imageCopyright = description.querySelector('.picture .copyright');
+            const title = description.querySelector('h1');
+            const picture = description.querySelector('figure img');
+            const imageCopyright = description.querySelector('figure figcaption');
 
             showHobbyText(result, title);
             showHobbyPicture(result, picture);
@@ -165,21 +171,13 @@ function showResultHobbyDescription(results) {
     });
 }
 
+function showHobbyDescription(result, description) {
+    description.innerHTML += result.description;
+}
+
 function isMainHobby(description) {
     return description.classList.contains('first');
 }
 
-function showHobbyDescription(result, content) {
-    content.innerHTML = result.description;
-}
 
-function moveToResultPage() {
-    page.animate(
-        [ { left: '-200%' } ],
-        {
-            duration: 300,
-            direction: 'alternate',
-            fill: 'forwards',
-        }
-    );
-}
+showResult();
