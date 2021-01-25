@@ -2,12 +2,12 @@ import { test } from '../data/test.js';
 
 
 
-const questionText = document.querySelector('#question h1');
-const progressBar = document.querySelector('#question .progress .bar');
-const progressText = document.querySelector('#question .progress .text');
+const questionText = document.querySelector('#question header h1');
+const progressBar = document.querySelector('#question header .progress .bar');
+const progressText = document.querySelector('#question header .progress .text');
 const choices = document.querySelector('#question .choices');
 
-const nodes = document.querySelectorAll('#question .top-box, #question .choices');
+const nodes = document.querySelectorAll('#question header, #question .choices');
 
 let isAnimating = false;
 
@@ -21,7 +21,7 @@ function showNextQuestion() {
         showResultPage();
     }
     else {
-        showCurrentQuestionWithAnimation();
+        showCurrentQuestion();
     }
 }
 
