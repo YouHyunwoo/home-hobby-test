@@ -34,6 +34,7 @@ shareButtons.forEach((button) => {
 
 function shareKakaotalk(e) {
     const host = window.location.host;
+    console.log(host + '/images/result/thumbnail.jpg');
     
     Kakao.Link.sendDefault({
         objectType: 'feed',

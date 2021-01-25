@@ -40,17 +40,18 @@ shareButtons.forEach((button) => {
 });
 
 function shareKakaotalk(e) {
-    const host = window.location.host;
+    const currentUrl = window.location.host;
+    console.log(currentUrl + '/images/result/thumbnail.jpg');
 
     Kakao.Link.sendDefault({
         objectType: 'feed',
         content: {
             title: '집콕 취미 테스트',
             description: '당신에게 알맞는 집콕 취미를 추천해드립니다!',
-            imageUrl: host + '/images/result/thumbnail.jpg',
+            imageUrl: currentUrl + '/images/result/thumbnail.jpg',
             link: {
-                webUrl: host,
-                mobileWebUrl: host,
+                webUrl: currentUrl,
+                mobileWebUrl: currentUrl,
             }
         }
     });
