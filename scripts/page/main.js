@@ -43,7 +43,6 @@ function shareKakaotalk(e) {
     const protocol = window.location.protocol;
     const host = window.location.host;
     const url = protocol + '//' + host;
-    console.log(url + '/images/result/thumbnail.jpg');
 
     Kakao.Link.sendDefault({
         objectType: 'feed',
