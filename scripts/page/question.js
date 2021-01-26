@@ -18,7 +18,7 @@ function showNextQuestion() {
 
     if (isFinished()) {
         calculateResult();
-        showResultPage();
+        moveToResultPage();
     }
     else {
         showCurrentQuestion();
@@ -37,10 +37,17 @@ function calculateResult() {
     test.sortScore();
 }
 
-function showResultPage() {
-    const firstResultIndex = test.getResultIndex(test.getFirstRankingResult());
-    const secondResultIndex = test.getResultIndex(test.getRankingResultByIndex(1));
-    const lastResultIndex = test.getResultIndex(test.getLastRankingResult());
+function moveToResultPage() {
+    const parameters = generateParameterByResults();
+    const parameterInURL = generateParameterInURL(parameters);
+
+    window.location.href = 'result.html' + parameterInURL;
+}
+
+function generateParameterByResults() {
+    const firstResultIndex = test.getResultIndexByRank(0);
+    const secondResultIndex = test.getResultIndexByRank(1);
+    const lastResultIndex = test.getResultIndexByRank(-1);
 
     const parameters = {
         'r1': firstResultIndex,
@@ -48,9 +55,7 @@ function showResultPage() {
         'r3': lastResultIndex
     }
 
-    const parameterInURL = generateParameterInURL(parameters);
-
-    window.location.href = 'result.html' + parameterInURL;
+    return parameters;
 }
 
 function generateParameterInURL(parameters) {
@@ -62,11 +67,13 @@ function generateParameterInURL(parameters) {
         pairs.push(`${key}=${value}`);
     }
 
-    return '?' + pairs.join('&');
+    const parameterInURL = '?' + pairs.join('&');
+    
+    return parameterInURL;
 }
 
 function showCurrentQuestion() {
-    changeQuestionAfterFadeOut();
+    changeQuestion();
 }
 
 function showCurrentQuestionWithAnimation() {
@@ -78,7 +85,7 @@ function showCurrentQuestionWithAnimation() {
     })
     .then(delay(200))
     .then(() => {
-        changeQuestionAfterFadeOut();
+        changeQuestion();
 
         fadeInAllNodes();
     })
@@ -109,7 +116,7 @@ function fadeOutAllNodes() {
     });
 }
 
-function changeQuestionAfterFadeOut() {
+function changeQuestion() {
     changeIntoCurrentQuestion();
 }
 

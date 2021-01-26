@@ -4,7 +4,7 @@ export class Test {
         this.questions = questions;
 
         this.scores = null;
-        this.rankingResults = null;
+        this.rankingResultIndices = null;
 
         this.reset();
     }
@@ -24,7 +24,7 @@ export class Test {
     }
 
     resetRankingResult() {
-        this.rankingResults = null;
+        this.rankingResultIndices = null;
     }
 
     setAllScoreToZero() {
@@ -84,30 +84,22 @@ export class Test {
 
     sortScore() {
         const sorted = this.scores
-            .map((score, index) => [score, this.results[index]])
+            .map((score, index) => [score, index])
             .sort((a, b) => b[0] - a[0]);
             
         this.scores = sorted.map((value) => value[0]);
-        this.rankingResults = sorted.map((value) => value[1]);
-    }
-
-    getFirstRankingResult() {
-        return this.rankingResults[0];
-    }
-
-    getLastRankingResult() {
-        return this.rankingResults[this.rankingResults.length - 1];
-    }
-
-    getRankingResultByIndex(index) {
-        return this.rankingResults[index];
+        this.rankingResultIndices = sorted.map((value) => value[1]);
     }
 
     getResultByIndex(index) {
         return this.results[index];
     }
 
-    getResultIndex(result) {
-        return this.results.indexOf(result);
+    getResultIndexByRank(rank) {
+        const length = this.rankingResultIndices.length;
+
+        const index = (rank % length + length) % length;
+
+        return this.rankingResultIndices[index];
     }
 }
