@@ -89,6 +89,10 @@ function copyToClipboard(text) {
 function showResult() {
     const parameters = parseURLParamerter(currentUrl);
 
+    if (!isValidURLParameter(parameters)) {
+        backToPreviousPage();
+    }
+
     const firstResultIndex = parameters['r1'];
     const secondResultIndex = parameters['r2'];
     const lastResultIndex = parameters['r3'];
@@ -108,18 +112,40 @@ function parseURLParamerter(url) {
 
     const questionMarkPosition = url.indexOf('?');
 
-    console.assert(questionMarkPosition >= 0);
-
-    const parameterPart = url.slice(questionMarkPosition + 1);
-    const eachParameter = parameterPart.split('&');
-
-    eachParameter.forEach(parameter => {
-        const [key, value] = parameter.split('=');
-
-        result[decodeURIComponent(key)] = decodeURIComponent(value);
-    });
+    if (questionMarkPosition >= 0) {
+        const parameterPart = url.slice(questionMarkPosition + 1);
+        const eachParameter = parameterPart.split('&');
+    
+        eachParameter.forEach(parameter => {
+            const [key, value] = parameter.split('=');
+    
+            result[decodeURIComponent(key)] = decodeURIComponent(value);
+        });
+    }
 
     return result;
+}
+
+function isValidURLParameter(parameters) {
+    return containsParameter(parameters) && containsResults(parameters);
+}
+
+function containsParameter(parameters) {
+    return Object.keys(parameters).length >= 0;
+}
+
+function containsResults(parameters) {
+    const containsFirstResult = parameters.hasOwnProperty('r1') && parameters['r1'];
+    const containsSecondResult = parameters.hasOwnProperty('r2') && parameters['r2'];
+    const containsLastResult = parameters.hasOwnProperty('r3') && parameters['r3'];
+
+    const containsAllResults = containsFirstResult && containsSecondResult && containsLastResult;
+
+    return containsAllResults;
+}
+
+function backToPreviousPage() {
+    history.back();
 }
 
 function showResultHobbyText(result) {
