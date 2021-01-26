@@ -135,6 +135,8 @@ figure figcaption a, .image-copyright a {
 }
 
 .share a {
+    width: 30vw;
+    margin: 0 auto;
     display: block;
     font-size: 4vw;
     font-family: 'Jua', sans-serif;
@@ -260,6 +262,7 @@ footer p {
     }
 
     .share a {
+        width: calc(30px * 7.52);
         font-size: calc(4px * 7.52);
     }
 
