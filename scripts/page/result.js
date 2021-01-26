@@ -160,7 +160,7 @@ function showResultHobbyDescription(results) {
         showHobbyDescription(result, description);
 
         if (!isMainHobby(description)) {
-            const title = description.querySelector('h1');
+            const title = description.querySelector('h2');
             const picture = description.querySelector('figure img');
             const imageCopyright = description.querySelector('figure figcaption');
 
