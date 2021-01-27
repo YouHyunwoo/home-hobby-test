@@ -1,15 +1,12 @@
 #question {
-    padding: 0;
-    width: 33.33333%;
     height: 100vh;
-    overflow-y: auto;
-    background: #000 url(../images/question/bg2.jpg) center no-repeat;
+    padding: 0;
+    display: none;
+    flex-direction: column;
     background:
         linear-gradient(135deg, rgba(24, 47, 112, 0.5) 20%, 20%, rgba(11, 35, 100, 0.3) 30%, 50%, rgba(36, 3, 63, .5) 50%),
         linear-gradient(225deg, transparent, 10%, black 70%);
     background-size: cover;
-    display: flex;
-    flex-direction: column;
 }
 
 #question header {
@@ -19,6 +16,7 @@
 #question header h1 {
     width: 100%;
     margin: auto;
+    margin-bottom: 4vw;
     font-size: 18px;
     font-family: 'JalnanOTF', sans-serif;
     color: white;
@@ -27,17 +25,16 @@
 
 #question header .progress {
     width: 100%;
-    margin: auto;
-    margin-top: 4vw;
 }
 
 #question header .progress .border {
     width: 100%;
     height: auto;
     position: relative;
-    background-color: #ffffff;
     margin: 0 auto;
+    margin-bottom: 10px;
     padding: 1px;
+    background-color: #ffffff;
 }
 
 #question header .progress .bar {
@@ -47,7 +44,6 @@
 }
 
 #question header .progress .text {
-    margin-top: 10px;
     font-size: 4vw;
     font-family: 'JalnanOTF', sans-serif;
     color: #ffffff;
@@ -80,21 +76,18 @@
 #question .ad-banner {
     width: 320px;
     height: 50px;
-    background-color: #fff;
+    background-color: rgba(0, 0, 0, 0.2);
     margin: 0 auto;
     position: absolute;
     left: 0;
     right: 0;
-    bottom: 0px;
+    bottom: 0;
 }
 
 @media only screen and (min-width: 500px) {
-    #question .progress {
-        margin-top: 20px;
-    }
-
     #question header h1 {
         max-width: 700px;
+        margin-bottom: calc(4px * 5);
         font-size: 30px;
     }
 

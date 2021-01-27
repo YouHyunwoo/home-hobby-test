@@ -2,7 +2,8 @@ import { resetQuestionPage } from './question.js';
 
 
 
-const page = document.querySelector('#pages');
+const mainPage = document.querySelector('#main');
+const questionPage = document.querySelector('#question');
 
 const neon = document.querySelector('#main header figure img');
 
@@ -69,18 +70,8 @@ function startTest() {
 }
 
 function moveToQuestionPage() {
-    page.style.left = '-100%';
-}
-
-function moveToQuestionPageWithAnimation() {
-    page.animate(
-        [ { left: '-100%' } ],
-        {
-            duration: 400,
-            direction: 'alternate',
-            fill: 'forwards',
-        }
-    );
+    mainPage.style.display = 'none';
+    questionPage.style.display = 'flex';
 }
 
 function animateNeonSign() {

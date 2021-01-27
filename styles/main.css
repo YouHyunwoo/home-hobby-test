@@ -1,7 +1,7 @@
 #main {
+    height: 100%;
     margin: 0 auto;
     padding: 5vw 0;
-    overflow-y: auto;
     background:#000 url(../images/main/background.jpg) top repeat-y;
     background-size: 100%;
 }
